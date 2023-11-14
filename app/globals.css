@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,400;1,300&family=Krona+One&family=Lexend+Giga&display=swap");
+/* @font-face {
+  font-family: "Lexend Giga";
+  src: url('../font');
+} */
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.animate-widen-bar {
+  animation: progress 0.4s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes widen {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+body {
+  /* color: rgb(var(--foreground-rgb)); */
+  background: rgba(30, 31, 53, 1);
+}
+
+.about {
+  color: #38d8fb;
+  text-shadow: 0px 0px 7px #38d8fb;
+  line-height: normal;
+}
+
+.btn-contact:hover {
+  opacity: 100;
+  border-radius: 2px;
+  background: #38D8FB;
+  box-shadow: 0px 0px 6px 0px #38D8FB;
+}
+
+.bulet {
+  border-radius: 257px;
+  border: 5px solid #38D8FB;
+  box-shadow: 0px 0px 13px 0px #38D8FB;
+}
+
+.kotak {
+  border-radius: 2px;
+  border: 6px solid #38D8FB;
+  box-shadow: 0px 0px 10px 0px #38D8FB;
+}
+
+
+.navbar {
+  /* width: 250px; */
+  /* margin: none; */
+  border-bottom-left-radius: 16px;
+  background: #40436C;
+}
+
+
+.nav-item {
+  font-size: 20px;
+  list-style: none;
+  color: white;
+  cursor: pointer;
+}
+
+.footer {
+  background: #38D8FB;
+  box-shadow: 0px 0px 17px 0px #38D8FB;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background: #38D8FB;
+  transform-origin: 0%;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    border-bottom-left-radius: 16px;
+    border-radius: 16px;
+  }
+}
