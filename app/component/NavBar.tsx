@@ -64,7 +64,7 @@ const NavBar = () => {
         'hidden' : isScrolled === true
       })}>
           <div className="md:mr-64">
-              <a href="#">
+              <a href="https://www.instagram.com/lszzzt_n/">
                 <picture>
                     <Image src={logo} alt="" width={55}/>
                 </picture>

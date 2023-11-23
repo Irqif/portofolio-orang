@@ -56,12 +56,12 @@ const About = () => {
                                     </div>
                                 </div>
                                 <div className="flex flex-row w-full justify-center gap-3">
-                                    <a href="#" className="border-2 border-biru-terang p-[14px] rounded-md">
+                                    <a href="https://www.instagram.com/lszzzt_n/" className="border-2 border-biru-terang p-[14px] rounded-md">
                                         <picture >
                                             <Image src={instagram} alt="" width={20} height={20}/>
                                         </picture>
                                     </a>
-                                    <a href="#" className="border-2 border-biru-terang p-[14px] rounded-md">
+                                    <a href="https://www.linkedin.com/in/fathir-anafi-101988278/" className="border-2 border-biru-terang p-[14px] rounded-md">
                                         <picture >
                                             <Image src={likedin} alt="" width={20} height={20}/>
                                         </picture>
