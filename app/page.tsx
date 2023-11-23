@@ -14,11 +14,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import clsx from 'clsx';
 import { motion, useScroll } from "framer-motion";
+import Loading from './component/loading';
+import { usePathname } from "next/navigation";
 
 
 export default function Home() {
+  const pathName = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const { scrollYProgress } = useScroll();
+  const isHome = pathName === '/'
+  const [loading , isLoading ] = useState(isHome);
+
+  useEffect(() => {
+    if(loading) return
+  },[loading])
 
 
   useEffect(() => {
@@ -43,28 +52,36 @@ export default function Home() {
 
   return (
     <div className="md:overflow-x-auto overflow-x-hidden scroll-smooth">
-      <motion.div
-        className="progress-bar"
-        style={{ scaleX: scrollYProgress }}
-      />
-      <div className='hidden md:block'>
-        <div className={clsx(`top-[50rem] md:top-[50rem] right-5 md:right-10 fixed bg-biru-tua px-4 py-2 rounded-full animate-bounce shadow-xl`, {
-          'block' : isScrolled === true,
-          'hidden' : isScrolled === false,
-        })}>
-          <a href="#nav">
-            <FontAwesomeIcon icon={faArrowUp} className='about text-biru-terang md:w-5 w-4' size='2x'/>
-          </a>
-        </div>
-      </div>
-      <NavBar/> 
-      <SideBar/>
-      <Home1/>
-      <About/>
-      <Skills/>
-      <Project/>
-      <Service/>
-      <Footer/>
+      {loading && isHome ? (
+        <Loading finishLoading={() => isLoading(false)}/>
+      ) : (
+        <>
+          <motion.div
+            className="progress-bar"
+            style={{ scaleX: scrollYProgress }}
+          />
+          <div className='hidden md:block'>
+            <div className={clsx(`top-[50rem] md:top-[50rem] right-5 md:right-10 fixed bg-biru-tua px-4 py-2 rounded-full animate-bounce shadow-xl`, {
+              'block' : isScrolled === true,
+              'hidden' : isScrolled === false,
+            })}>
+              <a href="#nav">
+                <FontAwesomeIcon icon={faArrowUp} className='about text-biru-terang md:w-5 w-4' size='2x'/>
+              </a>
+            </div>
+          </div>
+          <NavBar/> 
+          <SideBar/>
+          <Home1/>
+          <About/>
+          <Skills/>
+          <Project/>
+          <Service/>
+          <Footer/>
+        </>
+        )
+        
+      }
     </div>
   );
 }

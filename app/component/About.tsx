@@ -1,3 +1,4 @@
+"use client"
 import profile from "../assets/profile.png"
 import kotak from "../assets/kotak.png"
 import Image from "next/image";
